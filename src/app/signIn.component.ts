@@ -1,13 +1,20 @@
 import { Component,OnInit } from '@angular/core';
+import { SignIn } from './signIn'
 
 @Component({
   selector: 'app-sign',
   templateUrl: './signIn.component.html'
 //   styleUrls: ['./signIn.component.css']
 })
-export class SignIn implements OnInit{
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
+export class SignInComponent  implements OnInit {
+    hero: SignIn = {
+        id: 1,
+        name: 'Windstorm'
+        // lname: 'ljl'
+      };
+    constructor() { }
+
+    ngOnInit() {
     }
-//   title = 'my-app';
+
 }
