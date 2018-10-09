@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CustomValidator } from './shared/CustomValidator';
+// import { CustomValidator } from './shared/CustomValidator';
 
 
 
@@ -21,8 +21,7 @@ export class SignUpComponent implements OnInit{
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
             firstName: ['', [Validators.required,Validators.minLength(8),Validators.maxLength(20)]],
-            // lastName: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
+            email: ['', [Validators.required, Validators.email,Validators.pattern('^(.?$|[^1-9-_.].*)[a-zA-Z0-9]+$')]],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
     }

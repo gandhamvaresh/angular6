@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+// import { CustomValidator } from './shared/CustomValidator';
 var SignUpComponent = /** @class */ (function () {
     function SignUpComponent(formBuilder) {
         this.formBuilder = formBuilder;
@@ -16,8 +17,7 @@ var SignUpComponent = /** @class */ (function () {
     SignUpComponent.prototype.ngOnInit = function () {
         this.registerForm = this.formBuilder.group({
             firstName: ['', [forms_1.Validators.required, forms_1.Validators.minLength(8), forms_1.Validators.maxLength(20)]],
-            // lastName: ['', Validators.required],
-            email: ['', [forms_1.Validators.required, forms_1.Validators.email]],
+            email: ['', [forms_1.Validators.required, forms_1.Validators.email, forms_1.Validators.pattern('^(.?$|[^1-9-_.].*)[a-zA-Z0-9]+$')]],
             password: ['', [forms_1.Validators.required, forms_1.Validators.minLength(6)]]
         });
     };
